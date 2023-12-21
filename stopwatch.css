@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #e5e5e5;
+  cursor: pointer;
+  /* min-height: 100vh; */
+}
+
+.container {
+  border-radius: 50% 20% / 10% 40%;
+  border-top: 9px solid red;
+  border-bottom: 9px solid #0ef;
+  background-color: #e5e5e5;
+  box-shadow: 6px 6px 8px gray, -6px -6px 8px white;
+  width: 30%;
+  min-width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 0;
+  padding-bottom: 60px;
+  /* border-radius: 10px; */
+}
+
+.timer-Display {
+  width: 100%;
+  background: rgb(79, 77, 77);
+  padding: 40px 0;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  border-radius: 50% 20% / 10% 40%;
+}
+
+.buttons {
+  width: 85%;
+  margin: 60px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #141313;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.buttons button:hover {
+  background-color: #141313;
+  color: #ffffff;
+  border: 3px solid #b6b6b6;
+  padding: 7px 17px;
+}
+/* navbar  */
+nav {
+  position: absolute;
+  flex-direction: column;
+  gap: 50px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 120px;
+}
+nav a {
+  position: relative;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  padding: 13px 30px;
+  transition: 0.5s;
+}
+nav a i {
+  color: red;
+}
+nav a:hover {
+  color: #0ef;
+}
+nav a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-top: 2px solid red;
+  border-bottom: 2px solid #0ef;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transition: 0.5s;
+}
+nav a:hover span {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  nav {
+    top: 0;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .container {
+    margin-top: 30px;
+  }
+}

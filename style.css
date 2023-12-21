@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800);
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #e5e5e5;
+  cursor: pointer;
+}
+.outerclock {
+  width: 350px;
+  height: 350px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  box-shadow: 6px 6px 8px gray, -6px -6px 8px white;
+  position: relative;
+  margin-top: 120px;
+  margin-left: 35%;
+}
+.innerclock {
+  width: 280px;
+  height: 280px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.time p {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Arial;
+  text-shadow: 1px 1px 2px gray;
+}
+.time p:nth-child(1) {
+  position: absolute;
+  left: 44%;
+  top: -10%;
+}
+.time p:nth-child(2) {
+  position: absolute;
+  left: -8%;
+  top: 36%;
+}
+.time p:nth-child(3) {
+  position: absolute;
+  left: 48%;
+  bottom: -10%;
+}
+.time p:nth-child(4) {
+  position: absolute;
+  right: -8%;
+  top: 36%;
+}
+#dot {
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 46%;
+  left: 46%;
+  z-index: 4;
+}
+#hour {
+  width: 10px;
+  height: 75px;
+  background: #00e5ff;
+  position: absolute;
+  top: 24%;
+  left: 47%;
+  border-radius: 50% 50% 0px 0px;
+  transform-origin: bottom;
+  z-index: 2;
+}
+#min {
+  width: 8px;
+  height: 110px;
+  background: yellow;
+  position: absolute;
+  top: 11%;
+  left: 47%;
+  border-radius: 50% 50% 0px 0px;
+  transform-origin: bottom;
+  z-index: 1;
+}
+#sec {
+  width: 5px;
+  height: 120px;
+  background: red;
+  position: absolute;
+  top: 8%;
+  left: 48%;
+  transform-origin: bottom;
+  z-index: 3;
+}
+/* navbar   */
+nav {
+  position: absolute;
+  flex-direction: column;
+  gap: 50px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav a {
+  position: relative;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  padding: 13px 30px;
+  transition: 0.5s;
+}
+nav a i {
+  color: red;
+}
+nav a:hover {
+  color: #0ef;
+}
+nav a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-top: 2px solid red;
+  border-bottom: 2px solid #0ef;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transition: 0.5s;
+}
+nav a:hover span {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .outerclock {
+    margin-left: 80px;
+    margin-top: 90px;
+  }
+  nav {
+    position: relative;
+    flex-direction: row;
+    gap: 5px;
+  }
+}
